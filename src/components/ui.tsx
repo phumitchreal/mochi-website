@@ -129,18 +129,15 @@ export function Reveal({ children, className, delay = 0, style }: { children: Re
 export function Stars() {
   return (
     <div className="sky" aria-hidden="true">
-      <span className="sky__cloud sky__cloud--1" />
-      <span className="sky__cloud sky__cloud--2" />
-      <span className="sky__cloud sky__cloud--3" />
       <span className="sky__shoot" />
-      {Array.from({ length: 72 }, (_, i) => {
+      {Array.from({ length: 54 }, (_, i) => {
         const left = (i * 37 + 13) % 100;
         const top = (i * 61 + 7) % 100;
         const size = i % 11 === 0 ? 4 : i % 5 === 0 ? 3 : i % 3 === 0 ? 2 : 1;
         return (
           <span key={i} className={`sky__star${size > 3 ? ' sky__star--big' : ''}`}
             style={{ left: `${left}%`, top: `${top}%`, width: size, height: size,
-              animationDelay: `${(i % 9) * 0.45}s`, opacity: 0.3 + (i % 5) * 0.13 } as CSSProperties} />
+              animationDelay: `${(i % 9) * 0.5}s`, opacity: 0.24 + (i % 4) * 0.12 } as CSSProperties} />
         );
       })}
       <span className="sky__grain" />
