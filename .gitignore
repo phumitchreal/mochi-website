@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.chrome-shot/
+.shots/
+.env
+.env.*
+.DS_Store
